@@ -1,7 +1,7 @@
 # variables.tf
 
 variable "api_gateway_address" {
-  description = "Akeyless API Gateway address"
+  description = "Akeyless API Gateway address, use /api/v2 on gateway or api.akeyless.io on SaaS"
   type        = string
 }
 
