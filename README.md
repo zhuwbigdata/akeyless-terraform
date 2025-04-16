@@ -1,6 +1,42 @@
 # akeyless-terraform
 
-## Init
+## Select Akeyless auth method for terraform provider
+```
+provider "akeyless" {
+  api_gateway_address = "https://api.akeyless.io"
+
+  api_key_login {
+    access_id  = ""
+    access_key = ""
+  }
+
+  //  aws_iam_login {
+  //    access_id = ""
+  //  }
+
+  //  azure_ad_login {
+  //    access_id = ""
+  //  }
+
+  //  email_login {
+  //    admin_email = "user@mail.com"
+  //    admin_password = ""
+  //  }
+
+  // jwt_login {
+  //    access_id = ""
+  //    jwt = var.jwt
+  //    // OR provide your JWT by storing it in an environment variable called AKEYLESS_AUTH_JWT
+  // }
+}
+```
+
+## Create terraform 
+### Define variables in variables.tf and set the values in terrafrom.tfvars
+### Define output 
+
+## Execution
+###  Init
 ```
 $ cd provider/
 $ ls -al
@@ -40,7 +76,7 @@ rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
 ```
 
-## Plan
+### Plan
 ```
 $ terraform plan -out tf.plan
 
@@ -138,7 +174,7 @@ To perform exactly these actions, run the following command to apply:
     terraform apply "tf.plan"
 ```
 
-## Apply
+### Apply
 ```
 $ terraform apply "tf.plan"
 akeyless_target_db.postgres_target: Creating...
